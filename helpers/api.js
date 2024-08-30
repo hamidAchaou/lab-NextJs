@@ -21,3 +21,31 @@ export const getUser = async (name) => {
     return null;
   }
 };
+
+// get Posts
+export const getPosts = async () => {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to fetch posts:", error);
+    return [];
+  }
+};
+
+export const getPost = async (id) => {
+  try {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to fetch post:", error);
+    return null;
+  }
+};
+
