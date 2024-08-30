@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import "./globals.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function RootLayout({ children }) {
   return (
