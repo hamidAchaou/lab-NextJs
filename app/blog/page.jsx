@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
+import Users from "../users/page";
 
 const Blog = () => {
   return (
     <>
       <ul>
         <li>
-          <Link href="/users">Users</Link>
+          <Users />
         </li>
       </ul>
     </>

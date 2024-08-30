@@ -2,14 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { getSlug } from "../../../helpers/slugify";
+import { getUsers } from "../../../helpers/api";
 
 const getUser = async (name) => {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const users = await response.json();
+    const users = await getUsers();
     return users.find((user) => getSlug(user.name) === name) || null;
   } catch (error) {
     console.error("Failed to fetch user:", error);
