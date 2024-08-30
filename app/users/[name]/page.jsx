@@ -1,18 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSlug } from "../../../helpers/slugify";
-import { getUsers } from "../../../helpers/api";
-
-const getUser = async (name) => {
-  try {
-    const users = await getUsers();
-    return users.find((user) => getSlug(user.name) === name) || null;
-  } catch (error) {
-    console.error("Failed to fetch user:", error);
-    return null;
-  }
-};
+import { getUser } from "../../../helpers/api";
 
 const User = ({ params }) => {
   const [user, setUser] = useState(null);
