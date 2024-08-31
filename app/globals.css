@@ -17,3 +17,14 @@
     }
   }
   
+  /* Light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+html.dark body {
+  background-color: #1a202c; /* Example dark background color */
+  color: #e2e8f0; /* Example light text color */
+}
